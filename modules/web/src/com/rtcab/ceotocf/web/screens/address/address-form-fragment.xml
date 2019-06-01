@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fragment xmlns="http://schemas.haulmont.com/cuba/screen/fragment.xsd">
+    <data>
+        <instance id="addressDc"
+                  class="com.rtcab.ceotocf.entity.Address"
+                  view="_local"
+                  provided="true">
+            <loader/>
+        </instance>
+    </data>
+    <layout>
+        <form id="form" dataContainer="addressDc">
+            <column width="250px">
+                <textField id="streetField" property="street"/>
+                <textField id="houseNumberField" property="houseNumber"/>
+                <textField id="postcodeField" property="postcode"/>
+                <textField id="cityField" property="city"/>
+            </column>
+        </form>
+    </layout>
+</fragment>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="ceotocf_Customer" name="customer-view" extends="_local">
+        <property name="invoiceAddress" view="_local"/>
+    </view>
+    <view entity="ceotocf_Order" name="order-view" extends="_local">
+        <property name="deliveryAddress" view="_local"/>
+        <property name="customer" view="_minimal"/>
+    </view>
+    <view entity="ceotocf_Producer" name="producer-view" extends="_local">
+        <property name="address" view="_local"/>
+    </view>
+</views>

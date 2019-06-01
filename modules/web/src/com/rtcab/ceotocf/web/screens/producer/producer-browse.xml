@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://browseCaption"
+        focusComponent="producersTable"
+        messagesPack="com.rtcab.ceotocf.web.screens.producer">
+    <data readOnly="true">
+        <collection id="producersDc"
+                    class="com.rtcab.ceotocf.entity.Producer"
+                    view="producer-view">
+            <loader id="producersDl">
+                <query>
+                    <![CDATA[select e from ceotocf_Producer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="producersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="producersTable"
+                dataLoader="producersDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="producersTable"
+                    width="100%"
+                    dataContainer="producersDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="address"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="producersTable.create"/>
+                <button id="editBtn" action="producersTable.edit"/>
+                <button id="removeBtn" action="producersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

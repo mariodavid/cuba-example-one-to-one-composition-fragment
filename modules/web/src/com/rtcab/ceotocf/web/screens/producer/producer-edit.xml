@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.rtcab.ceotocf.web.screens.producer">
+    <data>
+        <instance id="producerDc"
+                  class="com.rtcab.ceotocf.entity.Producer"
+                  view="producer-view">
+            <loader/>
+            <instance id="addressDc" property="address"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <hbox spacing="true">
+            <groupBox id="producerBox" caption="msg://producerInfo" height="200px">
+                <form id="form" dataContainer="producerDc">
+                    <column width="250px">
+                        <textField id="nameField" property="name"/>
+                    </column>
+                </form>
+            </groupBox>
+            <groupBox id="addressBox" caption="msg://addressInfo" height="200px">
+                <fragment screen="ceotocf_AddressFormFragment"/>
+            </groupBox>
+        </hbox>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

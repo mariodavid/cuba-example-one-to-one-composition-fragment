@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.rtcab.ceotocf.web.screens.order">
+    <data>
+        <instance id="orderDc"
+                  class="com.rtcab.ceotocf.entity.Order"
+                  view="order-view">
+            <loader/>
+            <instance id="addressDc" property="deliveryAddress"/>
+        </instance>
+        <collection id="customersDc" class="com.rtcab.ceotocf.entity.Customer" view="_minimal">
+            <loader id="customersLc">
+                <query>
+                    <![CDATA[select e from ceotocf_Customer e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="orderDc">
+            <column width="250px">
+                <dateField id="orderDateField" property="orderDate"/>
+                <lookupPickerField id="customerField" optionsContainer="customersDc" property="customer">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="open" type="picker_open"/>
+                    </actions>
+                </lookupPickerField>
+            </column>
+            <column width="250px">
+                <fragment screen="ceotocf_AddressFormFieldsFragment"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
