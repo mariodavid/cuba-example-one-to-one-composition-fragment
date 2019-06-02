@@ -10,7 +10,7 @@
             <loader/>
             <instance id="addressDc" property="deliveryAddress"/>
         </instance>
-        <collection id="customersDc" class="com.rtcab.ceotocf.entity.Customer" view="_minimal">
+        <collection id="customersDc" class="com.rtcab.ceotocf.entity.Customer" view="customer-view">
             <loader id="customersLc">
                 <query>
                     <![CDATA[select e from ceotocf_Customer e]]>
@@ -22,17 +22,15 @@
                 width="800"/>
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="orderDc">
-            <column width="250px">
-                <dateField id="orderDateField" property="orderDate"/>
+            <column width="495px">
                 <lookupPickerField id="customerField" optionsContainer="customersDc" property="customer">
                     <actions>
                         <action id="lookup" type="picker_lookup"/>
                         <action id="open" type="picker_open"/>
                     </actions>
                 </lookupPickerField>
-            </column>
-            <column width="250px">
                 <fragment screen="ceotocf_AddressFormFieldsFragment"/>
+                <dateField id="orderDateField" property="orderDate"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

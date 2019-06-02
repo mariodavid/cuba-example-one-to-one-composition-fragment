@@ -6,7 +6,7 @@
     </view>
     <view entity="ceotocf_Order" name="order-view" extends="_local">
         <property name="deliveryAddress" view="_local"/>
-        <property name="customer" view="_minimal"/>
+        <property name="customer" view="customer-view"/>
     </view>
     <view entity="ceotocf_Producer" name="producer-view" extends="_local">
         <property name="address" view="_local"/>

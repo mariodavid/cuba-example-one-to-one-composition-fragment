@@ -9,10 +9,41 @@
         </instance>
     </data>
     <layout spacing="true">
-        <textField inputPrompt="msg://com.rtcab.ceotocf.entity.Address/Address.street" dataContainer="addressDc" id="streetField" property="street"/>
-        <textField inputPrompt="msg://com.rtcab.ceotocf.entity.Address/Address.houseNumber" dataContainer="addressDc" id="houseNumberField" property="houseNumber"/>
-        <textField inputPrompt="msg://com.rtcab.ceotocf.entity.Address/Address.postcode" dataContainer="addressDc" id="postcodeField" property="postcode"/>
-        <textField inputPrompt="msg://com.rtcab.ceotocf.entity.Address/Address.city" dataContainer="addressDc" id="cityField" property="city"/>
+        <grid spacing="true">
+            <columns count="6"/>
+            <rows>
+                <row>
+                    <textField
+                            colspan="5"
+                            width="100%"
+                            inputPrompt="msg://com.rtcab.ceotocf.entity.Address/Address.street"
+                            dataContainer="addressDc"
+                            id="streetField"
+                            property="street"/>
+                    <textField
+                            width="100%"
+                            inputPrompt="msg://houseNumberShort"
+                            dataContainer="addressDc"
+                            id="houseNumberField"
+                            property="houseNumber"/>
+                </row>
+                <row>
+                    <textField
+                            colspan="2"
+                            inputPrompt="msg://com.rtcab.ceotocf.entity.Address/Address.postcode"
+                            dataContainer="addressDc"
+                            id="postcodeField"
+                            property="postcode"/>
+                    <textField
+                            colspan="4"
+                            inputPrompt="msg://com.rtcab.ceotocf.entity.Address/Address.city"
+                            dataContainer="addressDc"
+                            id="cityField"
+                            property="city"/>
+                </row>
+            </rows>
+        </grid>
+
     </layout>
 </fragment>
 
