@@ -23,14 +23,14 @@ The `Address` entity is a dedicated entity which is referenced as a One-to-One c
 The different UI solutions to render the Address information in the corresponding editors differ in how the code-reuse
 of the address editor is used.
 
-![overview](https://github.com/mariodavid/cuba-example-one-to-one-composition-fragments/blob/master/img/overview.gif)
+![overview](https://github.com/mariodavid/cuba-example-one-to-one-composition-fragment/blob/master/img/overview.gif)
 
 
 
 ### Solution 1: Address Editor
 
 
-![solution-1](https://github.com/mariodavid/cuba-example-one-to-one-composition-fragments/blob/master/img/solution-1.png)
+![solution-1](https://github.com/mariodavid/cuba-example-one-to-one-composition-fragment/blob/master/img/solution-1.png)
 
 The first option is not using Fragments. Instead it uses the normal rendering mechanism of a 1:1 composition in CUBA:
 
@@ -43,7 +43,7 @@ This can be seen in action in the  Customer editor screen:
 ### Solution 2: Address Fragment with Input Fields
 
 
-![solution-2](https://github.com/mariodavid/cuba-example-one-to-one-composition-fragments/blob/master/img/solution-2.png)
+![solution-2](https://github.com/mariodavid/cuba-example-one-to-one-composition-fragment/blob/master/img/solution-2.png)
 
 
 The second option uses a Fragment for rendering the input fields of the address. It defines a particular grid layout
@@ -128,7 +128,7 @@ in terms of the Labels etc.
 
 
 
-![solution-3](https://github.com/mariodavid/cuba-example-one-to-one-composition-fragments/blob/master/img/solution-3.png)
+![solution-3](https://github.com/mariodavid/cuba-example-one-to-one-composition-fragment/blob/master/img/solution-3.png)
 
 
 In the last solution, another Address Fragment is used. But instead of only defining the input fields,
